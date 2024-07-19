@@ -1,0 +1,30 @@
+#include<stdio.h>
+void secondSmallest(int arr[],int n)
+{
+    int smallest=arr[0];
+    int secondSmallest=arr[0];
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]<smallest)
+        {
+            secondSmallest=smallest;
+            smallest=arr[i];
+        }
+        else if(arr[i]<secondSmallest&&arr[i]!=smallest)
+        {
+            secondSmallest=arr[i];
+        }
+    }
+    if(secondSmallest==arr[0])
+    printf("there is no second smallest element\n");
+    else
+    printf("Second smallest element:%d\n",secondSmallest);
+    }
+int main()
+{
+    int arr[]={10,20,30,40,50};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    secondSmallest(arr,n);
+    return 0;
+}
+
